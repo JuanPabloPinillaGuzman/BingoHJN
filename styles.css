@@ -1,0 +1,444 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado con logo e imagen de Jesús */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* padding: 20px; */
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.jesus-image {
+    flex: 0 0 auto;
+}
+
+.jesus-img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-image {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.header-controls {
+    flex: 0 0 auto;
+}
+
+/* Estilos de botones */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-reset {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    color: white;
+}
+
+/* Tabla principal del Bingo (ancho completo) */
+.bingo-table-container.main-table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.main-table h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Contenedor inferior: Tabla de patrones y controles */
+.bottom-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+/* Segunda tabla de patrones */
+.second-table-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.second-table-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Tabla del bingo */
+.bingo-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-table th,
+.bingo-table td {
+    padding: 12px 6px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 45px;
+    height: 45px;
+    vertical-align: middle;
+}
+
+/* Tabla de patrones */
+.pattern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-table td {
+    padding: 10px 6px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    min-width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* Encabezados de letras */
+.letter-header {
+    background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+    color: white;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezados de números */
+.number-header {
+    background: linear-gradient(45deg, #4ECDC4, #44A08D);
+    color: white;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Celdas de letras BINGO */
+.letter-cell {
+    background: linear-gradient(45deg, #FFD93D, #FFB347);
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.letter-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Celdas de números */
+.number-cell {
+    background: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.number-cell:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estado marcado */
+.number-cell.marked {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Celdas de letras en la tabla de patrones */
+.pattern-letter {
+    background: linear-gradient(45deg, #FFD93D, #FFB347);
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+
+/* Celdas de patrón */
+.pattern-cell {
+    background: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pattern-cell:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Casilla negra */
+.black-cell {
+    background: #000 !important;
+    color: white !important;
+    cursor: default !important;
+}
+
+.black-cell:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Estado marcado para patrones */
+.pattern-cell.marked {
+    background: linear-gradient(45deg, #9C27B0, #7B1FA2);
+    color: white;
+    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+}
+
+/* Controles adicionales */
+.additional-controls {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.additional-controls h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pattern-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-group {
+    text-align: center;
+}
+
+.button-group h4 {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.button-group .btn {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-pattern {
+    background: linear-gradient(45deg, #FF9800, #F57C00);
+    color: white;
+}
+
+.btn-pattern:hover {
+    background: linear-gradient(45deg, #F57C00, #E65100);
+}
+
+/* Información del juego */
+.game-info {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-info p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.game-info p:last-child {
+    margin-bottom: 0;
+}
+
+#markedCount {
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+#patternCount {
+    color: #9C27B0;
+    font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .bottom-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .second-table-container,
+    .additional-controls {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .jesus-img {
+        max-width: 150px;
+    }
+    
+    .logo-img {
+        max-width: 300px;
+    }
+    
+    .bingo-table th,
+    .bingo-table td {
+        padding: 8px 4px;
+        font-size: 0.9rem;
+        min-width: 40px;
+        height: 40px;
+    }
+    
+    .letter-cell {
+        font-size: 1.1rem;
+    }
+    
+    .pattern-table td {
+        padding: 6px 4px;
+        font-size: 0.8rem;
+        min-width: 35px;
+        height: 35px;
+    }
+    
+    .pattern-buttons {
+        gap: 15px;
+    }
+    
+    .button-group .btn {
+        margin: 2px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bingo-table th,
+    .bingo-table td {
+        padding: 6px 3px;
+        font-size: 0.8rem;
+        min-width: 35px;
+        height: 35px;
+    }
+    
+    .letter-cell {
+        font-size: 1rem;
+    }
+    
+    .pattern-table td {
+        padding: 5px 3px;
+        font-size: 0.7rem;
+        min-width: 30px;
+        height: 30px;
+    }
+    
+    .button-group .btn {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+}
